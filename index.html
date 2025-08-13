@@ -4,26 +4,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="./css/style.css" />
-  <title>Sorting visualizer</title>
+  <title>Sorting Visualizer - Interactive Algorithm Visualization</title>
 </head>
 
 <body>
   <div class="nav-container">
     <h2 class="title" onclick="window.location.reload()">
-      Sorting visualizer
+      <i class="fas fa-sort-amount-down"></i>
+      Sorting Visualizer
     </h2>
     <div class="navbar" id="navbar">
-      <a id="random" onclick="RenderScreen()">Generate array</a>
+      <a id="random" class="btn-primary">
+        <i class="fas fa-random"></i>
+        Generate Array
+      </a>
       <span class="options">
         <select name="select sort algorithm" id="menu" class="algo-menu">
-          <option value="0">Choose algorithm</option>
+          <option value="0">Choose Algorithm</option>
           <option value="1">Bubble Sort</option>
           <option value="2">Selection Sort</option>
           <option value="3">Insertion Sort</option>
@@ -33,7 +37,7 @@
       </span>
       <span class="options">
         <select name="select array size" id="menu" class="size-menu">
-          <option value="0">Array size</option>
+          <option value="0">Array Size</option>
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="15">15</option>
@@ -58,24 +62,38 @@
           <option value="4">4.00x</option>
         </select>
       </span>
-      <a class="start">Sort</a>
-      <a class="icon"><i class="fa fa-bars"></i></a>
+      <a class="start btn-success">
+        <i class="fas fa-play"></i>
+        Sort
+      </a>
+      <a class="icon" onclick="response()">
+        <i class="fas fa-bars"></i>
+      </a>
     </div>
   </div>
+  
   <div class="center">
-    <div class="array"></div>
+    <div class="array-container">
+      <div class="array-info">
+        <span class="array-size">Array Size: <span id="current-size">10</span></span>
+        <span class="algorithm-name">Algorithm: <span id="current-algo">None</span></span>
+      </div>
+      <div class="array"></div>
+    </div>
   </div>
+  
   <footer class="footer">
-    <p>Created with <i class="fa fa-heart"></i> by Sarthak</p>
+    <p>Created with <i class="fas fa-heart"></i> by Sarthak</p>
     <p>
       <a href="https://www.linkedin.com/in/sarthak-porwal-8a9b40256/" target="_blank" class="link">
-        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        <i class="fab fa-linkedin"></i>
       </a>
       <a href="https://github.com/sarthakporwal" target="_blank" class="link">
-        <i class="fa fa-github" aria-hidden="true"></i>
+        <i class="fab fa-github"></i>
       </a>
     </p>
   </footer>
+  
   <script src="./scripts/app.js"></script>
   <script src="./scripts/helper.js"></script>
   <script src="./scripts/sort-algorithms.js"></script>
